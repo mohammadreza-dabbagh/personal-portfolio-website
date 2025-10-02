@@ -46,3 +46,64 @@
 .nav-toggle {
     display: none; 
 }
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column; 
+        width: 100%;
+        position: absolute; 
+        top: 60px; 
+        left: 0;
+        background-color: #444; 
+        z-index: 10;
+        padding: 1rem 0;
+    }
+
+    .nav-list li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #555;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem;
+    }
+    
+    .nav-toggle {
+        display: block; 
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        position: relative;
+        z-index: 20;
+    }
+
+    
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        transition: transform 0.3s ease;
+    }
+
+    .hamburger::before {
+        position: absolute;
+        top: 0px;
+    }
+    
+    .hamburger::after {
+        position: absolute;
+        top: 15px;
+    }
+    
+    .nav-list.active {
+        display: flex;
+    }
+}
